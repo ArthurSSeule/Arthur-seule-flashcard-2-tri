@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #12151c;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- CABEÇALHO --- */
+.cabecalho {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b202e;
+    border-bottom: 3px solid #00a2ff;
+}
+
+h1 {
+    color: #00a2ff;
+    font-size: 24px;
+}
+
+.cabecalho-link {
+    color: #ff9d00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 25px;
+}
+
+h2 {
+    color: #b0b8c6;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+section {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* --- FLASHCARD 3D --- */
+.cartao {
+    width: 280px;
+    height: 380px;
+    perspective: 1000px;
+}
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
+}
+
+.cartao-frente, .cartao-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cartao-frente {
+    background-color: #1a2130;
+    border: 2px solid #00a2ff;
+}
+
+.cartao-verso {
+    background-color: #261f18;
+    border: 2px solid #ff9d00;
+    transform: rotateY(180deg);
+    justify-content: center;
+}
+
+.cartao-imagem {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ETIQUETAS */
+.tag-mito {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.tag-fato {
+    background-color: #00cc66;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.texto-card {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: #1b202e;
+    padding: 15px 25px;
+    color: #888;
+    text-align: center;
+    border-top: 1px solid #2a3142;
+}
